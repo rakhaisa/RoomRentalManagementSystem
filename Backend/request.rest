@@ -1,0 +1,40 @@
+GET http://localhost:6001/payments
+
+###
+GET http://localhost:6001/tenants/646b670f43bbe53369512b7a
+
+###
+POST http://localhost:6001/tenants
+Content-Type: application/json
+
+{
+    "tenantID": "T002",
+    "name": "Malik",
+    "email": "Malik@gmail.com",
+    "dob": "1998-07-01",
+    "phoneNumber": "08187905678",
+    "gender": "Male",
+    "occupation": "Mahasiswa",
+    "address": "Padang",
+    "rentId": "RT002",
+    "rentAmount" : "4000000",
+    "roomNo": "R002",
+    "status" : "Active"
+}
+
+###
+
+PATCH  http://localhost:6001/tenants/646b670f43bbe53369512b7a
+Content-Type: application/json
+
+{
+    "tenantID": "T002",
+    "name": "Malik",
+    "email": "Malik@gmail.com",
+    "DOB": "1998-07-01",
+    "phoneNumber": "08187905678",
+    "gender": "Male",
+    "address": "Bukittinggi",
+    "rentId": "RT002",
+    "roomNo": "R002"
+}
