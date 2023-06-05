@@ -13,8 +13,6 @@ import userRoutes from "./routes/users.js";
 import crudRoutes from "./routes/crud.js";
 import generalRoutes from "./routes/general.js";
 import { register } from "./controllers/auth.js";
-import { verifyToken } from "./middleware/auth.js";
-import User from "./models/user.js";
 
 
 
