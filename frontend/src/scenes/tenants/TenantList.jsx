@@ -25,7 +25,7 @@ const TenantList = () => {
 
   const getTenants = async () => {
     try {
-      const response = await axios.get("http://localhost:6001/tenants");
+      const response = await axios.get("http://https://easykos-backend.onrender.com/tenants");
       setTenants(response.data);
     } catch (error) {
       console.log(error);
@@ -34,7 +34,7 @@ const TenantList = () => {
 
   const deleteTenant = async (id) => {
     try {
-      await axios.delete(`http://localhost:6001/tenants/${id}`);
+      await axios.delete(`http://https://easykos-backend.onrender.com/tenants/${id}`);
       getTenants();
     } catch (error) {
       console.log(error);
