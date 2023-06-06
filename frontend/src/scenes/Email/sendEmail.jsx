@@ -14,7 +14,7 @@ function App() {
 
   const getEmailAddresses = async () => {
     try {
-      const response = await axios.get('http://localhost:6001/email');
+      const response = await axios.get('http://https://easykos-backend.onrender.com/email');
       setEmailList(response.data);
     } catch (error) {
       console.error(error);
@@ -24,7 +24,7 @@ function App() {
   const sendEmail = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:6001/email',{
+      await axios.post('http://https://easykos-backend.onrender.com/email',{
         to,
         subject,
         text: message,
