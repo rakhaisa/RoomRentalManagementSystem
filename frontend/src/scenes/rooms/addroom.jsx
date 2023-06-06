@@ -14,7 +14,7 @@ const AddRoom = () => {
     const saveRoom = async (e) => {
       e.preventDefault();
       try {
-        await axios.post("http://localhost:6001/rooms", {
+        await axios.post("http://https://easykos-backend.onrender.com/rooms", {
           rentAmount,
           roomNo,
           roomType,
