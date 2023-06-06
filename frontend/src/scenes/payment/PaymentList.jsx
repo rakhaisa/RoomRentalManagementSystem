@@ -7,6 +7,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import IconButton from '@mui/material/IconButton';
 import { Delete as DeleteIcon, Edit as EditIcon, Add as AddIcon, Download as DownloadIcon } from "@mui/icons-material";
 import axios from "axios";
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 const PaymentList = () => {
     const [payments, setPayment] = useState([]);
@@ -17,13 +18,13 @@ const PaymentList = () => {
   }, []);
 
   const getPayments = async () => {
-    const response = await axios.get("http://https://easykos-backend.onrender.com/payment");
+    const response = await axios.get("${baseUrl}/payment");
     setPayment(response.data);
   };
 
   const deletePayment = async (id) => {
     try {
-      await axios.delete(`http://https://easykos-backend.onrender.com/payment/${id}`);
+      await axios.delete(`${baseUrl}/payment/${id}`);
       getPayments();
     } catch (error) {
       console.log(error);
