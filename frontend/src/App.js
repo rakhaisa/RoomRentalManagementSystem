@@ -41,14 +41,14 @@ function App() {
           <CssBaseline />
           <Routes>
             {/* Protected routes before login */}
-            {!isAuth ? (
+            {/*!isAuth ? (
               <>
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/" element={<Navigate to="/login" replace />} />
               </>
             ) : (
-               )}
+               )*/}
               
               <Route path="/" element={<Layout />}>
                 <Route path="/dashboard" element={<Dashboard />} />
