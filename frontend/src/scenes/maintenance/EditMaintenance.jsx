@@ -21,7 +21,7 @@ const EditMaintenance = () => {
     }, []);
   
     const getMaintenanceById = async () => {
-      const response = await axios.get(`http://localhost:6001/maintenenaces/${id}`);
+      const response = await axios.get(`http://https://easykos-backend.onrender.com/${id}`);
       setMaintenanceID(response.data.maintenanceID);
       setDescription(response.data.description);
       setMaintDate(response.data.maintDate);
@@ -32,7 +32,7 @@ const EditMaintenance = () => {
     const updateMaintenance = async (e) => {
       e.preventDefault();
       try {
-        await axios.patch(`http://localhost:6001/maintenances/${id}`, {
+        await axios.patch(`http://https://easykos-backend.onrender.com/${id}`, {
           maintenanceID,
           description,
           maintAmount,
