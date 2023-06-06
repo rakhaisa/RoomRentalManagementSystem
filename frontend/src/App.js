@@ -48,6 +48,7 @@ function App() {
                 <Route path="/" element={<Navigate to="/login" replace />} />
               </>
             ) : (
+               )}
               
               <Route path="/" element={<Layout />}>
                 <Route path="/dashboard" element={<Dashboard />} />
@@ -69,7 +70,7 @@ function App() {
                 <Route path="/report" element={<Report />} />
                 <Route path="/" element={<Navigate to="/dashboard" />} />
               </Route>
-            )}
+           
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
