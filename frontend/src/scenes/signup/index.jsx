@@ -34,7 +34,7 @@ const Signup = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "http://localhost:6001/auth/register",
+      "http://https://easykos-backend.onrender.com/auth/register",
       {
         method: "POST",
         body: formData,
