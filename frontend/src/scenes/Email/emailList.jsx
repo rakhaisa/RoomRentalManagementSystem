@@ -7,6 +7,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import IconButton from '@mui/material/IconButton';
 import { Delete as DeleteIcon, Edit as EditIcon, Add as AddIcon, Send as SendIcon } from "@mui/icons-material";
 import axios from "axios";
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 const MessageList = () => {
     const [messages, setMessage] = useState([]);
@@ -17,7 +18,7 @@ const MessageList = () => {
   }, []);
 
   const getMessage = async () => {
-    const response = await axios.get("http://https://easykos-backend.onrender.com/email");
+    const response = await axios.get("${baseUrl}/email");
     setMessage(response.data);
   };
 
