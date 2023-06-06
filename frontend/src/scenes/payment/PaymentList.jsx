@@ -17,13 +17,13 @@ const PaymentList = () => {
   }, []);
 
   const getPayments = async () => {
-    const response = await axios.get("http://localhost:6001/payment");
+    const response = await axios.get("http://https://easykos-backend.onrender.com/payment");
     setPayment(response.data);
   };
 
   const deletePayment = async (id) => {
     try {
-      await axios.delete(`http://localhost:6001/payment/${id}`);
+      await axios.delete(`http://https://easykos-backend.onrender.com/payment/${id}`);
       getPayments();
     } catch (error) {
       console.log(error);
