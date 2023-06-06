@@ -21,7 +21,7 @@ const [roomNumbers, setRoomNumbers] = useState([]);
     useEffect(() => {
       const fetchRoomNumbers = async () => {
         try {
-          const response = await axios.get("http://localhost:6001/rooms");
+          const response = await axios.get("http://https://easykos-backend.onrender.com/rooms");
           const availableRooms = response.data.filter(room => room.status === 'Unavailable');
           const numbers = availableRooms.map(room => room.roomNo);
           setRoomNumbers(numbers);
@@ -35,7 +35,7 @@ const [roomNumbers, setRoomNumbers] = useState([]);
     const savePayment = async (e) => {
       e.preventDefault();
       try {
-        await axios.post("http://localhost:6001/payment", {
+        await axios.post("http://https://easykos-backend.onrender.com/payment", {
           tenantID,
             rentAmount,
             roomNo,
