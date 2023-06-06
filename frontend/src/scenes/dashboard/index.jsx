@@ -50,7 +50,7 @@ const Dashboard = () => {
 
   async function handleEventAdd(data) {
     try {
-      await axios.post("http://localhost:6001/general/task", data.event);
+      await axios.post("http://https://easykos-backend.onrender.com/general/task", data.event);
       // Successful request, perform any necessary actions
     } catch (error) {
       console.log(error);
@@ -59,7 +59,7 @@ const Dashboard = () => {
   }
 
   async function handleDateSet(data) {
-    const response = await axios.get("http://localhost:6001/general/task", +moment(data.start).toISOString()+"&end="+moment(data.end).toISOString())
+    const response = await axios.get("http://https://easykos-backend.onrender.com/general/task", +moment(data.start).toISOString()+"&end="+moment(data.end).toISOString())
     setEvents(response.data); 
   }
 
@@ -79,7 +79,7 @@ const Dashboard = () => {
       // Perform event deletion logic here
       try {
         // Make the DELETE request to the backend server
-        await axios.delete(`http://localhost:6001/general/task/${id}`);
+        await axios.delete(`http://https://easykos-backend.onrender.com/general/task/${id}`);
         
         // Call the function to update the events or perform any necessary actions
         handleDateSet();
