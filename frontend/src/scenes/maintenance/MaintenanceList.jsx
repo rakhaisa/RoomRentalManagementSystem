@@ -18,13 +18,13 @@ const MaintenanceList = () => {
   }, []);
 
   const getMaintenances = async () => {
-    const response = await axios.get("http://localhost:6001/maintenances");
+    const response = await axios.get("http://https://easykos-backend.onrender.com/maintenances");
     setMaintenance(response.data);
   };
 
   const deleteMaintenance = async (id) => {
     try {
-      await axios.delete(`http://localhost:6001/maintenances/${id}`);
+      await axios.delete(`hhttp://https://easykos-backend.onrender.com/maintenances/${id}`);
       getMaintenances();
     } catch (error) {
       console.log(error);
