@@ -20,7 +20,7 @@ const EditRoom = () => {
     }, []);
   
     const getRoomById = async () => {
-      const response = await axios.get(`http://localhost:6001/rooms/${id}`);
+      const response = await axios.get(`http://https://easykos-backend.onrender.com/rooms/${id}`);
       setTenantID(response.data.tenantID);
       setRoomType(response.data.roomType);
       setRentAmount(response.data.rentAmount);
@@ -31,7 +31,7 @@ const EditRoom = () => {
     const updateRoom = async (e) => {
       e.preventDefault();
       try {
-        await axios.patch(`http://localhost:6001/rooms/${id}`, {
+        await axios.patch(`http://https://easykos-backend.onrender.com/rooms/${id}`, {
           tenantID,
           rentAmount,
           roomNo,
