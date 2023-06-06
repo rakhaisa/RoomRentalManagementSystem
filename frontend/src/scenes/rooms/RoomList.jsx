@@ -20,7 +20,7 @@ const RoomList = () => {
 
 const getRooms = async () => {
   try {
-    const response = await axios.get("http://localhost:6001/rooms");
+    const response = await axios.get("http://https://easykos-backend.onrender.com/rooms");
     setRooms(response.data);
   } catch (error) {
     console.log(error);
@@ -35,7 +35,7 @@ const currencyFormatter = new Intl.NumberFormat('id-ID', {
 
   const deleteRoom = async (id) => {
     try {
-      await axios.delete(`http://localhost:6001/rooms/${id}`);
+      await axios.delete(`http://https://easykos-backend.onrender.com/rooms/${id}`);
       getRooms();
     } catch (error) {
       console.log(error);
