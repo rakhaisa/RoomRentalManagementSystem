@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { TextField, Button, FormControl, InputLabel, Select, MenuItem, Box, } from '@mui/material';
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "components/Header";
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 const AddMaintenance = () => {
   const [maintenanceID, setMaintenanceID] = useState("");
@@ -17,7 +18,7 @@ const AddMaintenance = () => {
     const saveMaintenance = async (e) => {
       e.preventDefault();
       try {
-        await axios.post("http://https://easykos-backend.onrender.com/maintenances", {
+        await axios.post("${baseUrl}/maintenances", {
           maintenanceID,
           description,
           maintAmount,
