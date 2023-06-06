@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { TextField, Button, FormControl, InputLabel, Select, MenuItem, Box,useTheme } from '@mui/material';
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "components/Header";
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 
 
@@ -27,7 +28,7 @@ const EditPayment = () => {
 
     const fetchRoomNumbers = async () => {
       try {
-        const response = await axios.get("http://https://easykos-backend.onrender.com/rooms");
+        const response = await axios.get("${baseUrl}/rooms");
         const availableRooms = response.data.filter(room => room.status === 'Unavailable');
         const numbers = availableRooms.map(room => room.roomNo);
         setRoomNumbers(numbers);
@@ -37,7 +38,7 @@ const EditPayment = () => {
     };
   
     const getPaymentById = async () => {
-      const response = await axios.get(`http://https://easykos-backend.onrender.com/payment/${id}`);
+      const response = await axios.get(`${baseUrl}/payment/${id}`);
       setTenantID(response.data.tenantID);
       setRentId(response.data.rentId);
       setPaymentType(response.data.paymentType);
