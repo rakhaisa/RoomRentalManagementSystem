@@ -17,7 +17,7 @@ const MessageList = () => {
   }, []);
 
   const getMessage = async () => {
-    const response = await axios.get("http://localhost:6001/email");
+    const response = await axios.get("http://https://easykos-backend.onrender.com/email");
     setMessage(response.data);
   };
 
