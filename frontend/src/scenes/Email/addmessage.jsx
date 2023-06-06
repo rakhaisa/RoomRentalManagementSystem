@@ -21,7 +21,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
     const saveMessage = async (e) => {
       e.preventDefault();
       try {
-        await axios.post("http://localhost:6001/email", {
+        await axios.post("https://easykos-backend.onrender.com/email", {
           tenantID,
             email,
             messageDate,
