@@ -64,7 +64,7 @@ const Login = () => {
 	
 	  const handleFormSubmit = async (values, onSubmitProps) => {
 		try {
-		  const url = "http://localhost:6001/auth/login";
+		  const url = "http://https://easykos-backend.onrender.com/auth/login";
 		  const { data: res } = await axios.post(url, values);
 		  localStorage.setItem("token", res.data);
 		  window.location = "/";
