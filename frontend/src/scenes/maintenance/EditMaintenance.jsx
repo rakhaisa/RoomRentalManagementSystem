@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { TextField, Button, FormControl, InputLabel, Select, MenuItem, Box, } from '@mui/material';
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "components/Header";
-
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 const EditMaintenance = () => {
   const [maintenanceID, setMaintenanceID] = useState("");
@@ -21,7 +21,7 @@ const EditMaintenance = () => {
     }, []);
   
     const getMaintenanceById = async () => {
-      const response = await axios.get(`http://https://easykos-backend.onrender.com/${id}`);
+      const response = await axios.get(`${baseUrl}/maintenances/${id}`);
       setMaintenanceID(response.data.maintenanceID);
       setDescription(response.data.description);
       setMaintDate(response.data.maintDate);
@@ -32,7 +32,7 @@ const EditMaintenance = () => {
     const updateMaintenance = async (e) => {
       e.preventDefault();
       try {
-        await axios.patch(`http://https://easykos-backend.onrender.com/${id}`, {
+        await axios.patch(`${baseUrl}/maintenances/${id}`, {
           maintenanceID,
           description,
           maintAmount,
