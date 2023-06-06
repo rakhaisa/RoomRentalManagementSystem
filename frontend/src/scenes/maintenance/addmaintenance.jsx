@@ -17,7 +17,7 @@ const AddMaintenance = () => {
     const saveMaintenance = async (e) => {
       e.preventDefault();
       try {
-        await axios.post("http://localhost:6001/maintenances", {
+        await axios.post("http://https://easykos-backend.onrender.com/maintenances", {
           maintenanceID,
           description,
           maintAmount,
