@@ -8,6 +8,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import IconButton from '@mui/material/IconButton';
 import { Delete as DeleteIcon, Edit as EditIcon, Add as AddIcon } from "@mui/icons-material";
 import useMediaQuery from "@mui/material/useMediaQuery"
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 const MaintenanceList = () => {
     const [maintenances, setMaintenance] = useState([]);
@@ -18,13 +19,13 @@ const MaintenanceList = () => {
   }, []);
 
   const getMaintenances = async () => {
-    const response = await axios.get("http://https://easykos-backend.onrender.com/maintenances");
+    const response = await axios.get("${baseUrl}/maintenances");
     setMaintenance(response.data);
   };
 
   const deleteMaintenance = async (id) => {
     try {
-      await axios.delete(`hhttp://https://easykos-backend.onrender.com/maintenances/${id}`);
+      await axios.delete(`${baseUrl}/maintenances/${id}`);
       getMaintenances();
     } catch (error) {
       console.log(error);
