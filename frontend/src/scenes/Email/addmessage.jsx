@@ -4,6 +4,7 @@ import Header from "components/Header";
 import { useNavigate } from "react-router-dom";
 import {  TextField, Button, FormControl, InputLabel, Select, MenuItem, Box, } from '@mui/material';
 import useMediaQuery from "@mui/material/useMediaQuery";
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
   
   const AddMessage  = () => {
@@ -21,7 +22,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
     const saveMessage = async (e) => {
       e.preventDefault();
       try {
-        await axios.post("https://easykos-backend.onrender.com/email", {
+        await axios.post("${baseUrl}/email", {
           tenantID,
             email,
             messageDate,
