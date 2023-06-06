@@ -27,7 +27,7 @@ const EditPayment = () => {
 
     const fetchRoomNumbers = async () => {
       try {
-        const response = await axios.get("http://localhost:6001/rooms");
+        const response = await axios.get("http://https://easykos-backend.onrender.com/rooms");
         const availableRooms = response.data.filter(room => room.status === 'Unavailable');
         const numbers = availableRooms.map(room => room.roomNo);
         setRoomNumbers(numbers);
@@ -37,7 +37,7 @@ const EditPayment = () => {
     };
   
     const getPaymentById = async () => {
-      const response = await axios.get(`http://localhost:6001/payment/${id}`);
+      const response = await axios.get(`http://https://easykos-backend.onrender.com/payment/${id}`);
       setTenantID(response.data.tenantID);
       setRentId(response.data.rentId);
       setPaymentType(response.data.paymentType);
