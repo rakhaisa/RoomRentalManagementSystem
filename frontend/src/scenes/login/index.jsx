@@ -14,6 +14,7 @@ import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLogin } from '../../state/index';
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 
 
@@ -64,7 +65,7 @@ const Login = () => {
 	
 	  const handleFormSubmit = async (values, onSubmitProps) => {
 		try {
-		  const url = "http://https://easykos-backend.onrender.com/auth/login";
+		  const url = "${baseUrl}/auth/login";
 		  const { data: res } = await axios.post(url, values);
 		  localStorage.setItem("token", res.data);
 		  window.location = "/";
