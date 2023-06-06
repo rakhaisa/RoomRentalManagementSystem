@@ -27,6 +27,7 @@ import { useGetDashboardQuery } from "state/api";
 import AddEventModal from "../task/addEventModal";
 import axios from "axios";
 import moment from "moment";
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -50,7 +51,7 @@ const Dashboard = () => {
 
   async function handleEventAdd(data) {
     try {
-      await axios.post("http://https://easykos-backend.onrender.com/general/task", data.event);
+      await axios.post("${baseUrl}/general/task", data.event);
       // Successful request, perform any necessary actions
     } catch (error) {
       console.log(error);
@@ -59,7 +60,7 @@ const Dashboard = () => {
   }
 
   async function handleDateSet(data) {
-    const response = await axios.get("http://https://easykos-backend.onrender.com/general/task", +moment(data.start).toISOString()+"&end="+moment(data.end).toISOString())
+    const response = await axios.get("${baseUrl}/general/task", +moment(data.start).toISOString()+"&end="+moment(data.end).toISOString())
     setEvents(response.data); 
   }
 
@@ -79,7 +80,7 @@ const Dashboard = () => {
       // Perform event deletion logic here
       try {
         // Make the DELETE request to the backend server
-        await axios.delete(`http://https://easykos-backend.onrender.com/general/task/${id}`);
+        await axios.delete(`${baseUrl}/general/task/${id}`);
         
         // Call the function to update the events or perform any necessary actions
         handleDateSet();
