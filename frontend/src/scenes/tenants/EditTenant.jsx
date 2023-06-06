@@ -29,7 +29,7 @@ const EditTenant = () => {
     }, []);
   
     const getTenantById = async () => {
-      const response = await axios.get(`http://localhost:6001/tenants/${id}`);
+      const response = await axios.get(`http://https://easykos-backend.onrender.com/tenants/${id}`);
       setTenantID(response.data.tenantID);
       setName(response.data.name);
       setDob(response.data.dob);
@@ -45,7 +45,7 @@ const EditTenant = () => {
 
     const fetchRoomNumbers = async () => {
       try {
-        const response = await axios.get("http://localhost:6001/rooms");
+        const response = await axios.get("http://https://easykos-backend.onrender.com/rooms");
         const availableRooms = response.data.filter(room => room.status === 'Available');
         const numbers = availableRooms.map(room => room.roomNo);
         setRoomNumbers(numbers);
