@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 function App() {
   const [emailList, setEmailList] = useState([]);
@@ -14,7 +15,7 @@ function App() {
 
   const getEmailAddresses = async () => {
     try {
-      const response = await axios.get('http://https://easykos-backend.onrender.com/email');
+      const response = await axios.get('${baseUrl}/email');
       setEmailList(response.data);
     } catch (error) {
       console.error(error);
@@ -24,7 +25,7 @@ function App() {
   const sendEmail = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://https://easykos-backend.onrender.com/email',{
+      await axios.post('${baseUrl}/email',{
         to,
         subject,
         text: message,
